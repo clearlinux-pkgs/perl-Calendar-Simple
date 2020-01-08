@@ -4,13 +4,14 @@
 #
 Name     : perl-Calendar-Simple
 Version  : 1.23
-Release  : 12
+Release  : 13
 URL      : https://cpan.metacpan.org/authors/id/D/DA/DAVECROSS/Calendar-Simple-1.23.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DA/DAVECROSS/Calendar-Simple-1.23.tar.gz
 Summary  : 'Perl extension to create simple calendars'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
 Requires: perl-Calendar-Simple-bin = %{version}-%{release}
+Requires: perl-Calendar-Simple-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
 %description
@@ -31,19 +32,30 @@ Summary: dev components for the perl-Calendar-Simple package.
 Group: Development
 Requires: perl-Calendar-Simple-bin = %{version}-%{release}
 Provides: perl-Calendar-Simple-devel = %{version}-%{release}
+Requires: perl-Calendar-Simple = %{version}-%{release}
 
 %description dev
 dev components for the perl-Calendar-Simple package.
 
 
+%package perl
+Summary: perl components for the perl-Calendar-Simple package.
+Group: Default
+Requires: perl-Calendar-Simple = %{version}-%{release}
+
+%description perl
+perl components for the perl-Calendar-Simple package.
+
+
 %prep
 %setup -q -n Calendar-Simple-1.23
+cd %{_builddir}/Calendar-Simple-1.23
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -53,7 +65,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -73,7 +85,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Calendar/Simple.pm
 
 %files bin
 %defattr(-,root,root,-)
@@ -82,3 +93,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 %files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Calendar::Simple.3
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/Calendar/Simple.pm
