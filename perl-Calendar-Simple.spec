@@ -4,7 +4,7 @@
 #
 Name     : perl-Calendar-Simple
 Version  : 2.0.1
-Release  : 17
+Release  : 18
 URL      : https://cpan.metacpan.org/authors/id/D/DA/DAVECROSS/Calendar-Simple-v2.0.1.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DA/DAVECROSS/Calendar-Simple-v2.0.1.tar.gz
 Summary  : 'Perl extension to create simple calendars'
@@ -96,4 +96,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.3/Calendar/Simple.pm
+/usr/lib/perl5/vendor_perl/5.32.1/Calendar/Simple.pm
