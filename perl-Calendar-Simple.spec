@@ -4,10 +4,10 @@
 # Using build pattern: cpan
 #
 Name     : perl-Calendar-Simple
-Version  : 2.0.2
-Release  : 27
-URL      : https://cpan.metacpan.org/authors/id/D/DA/DAVECROSS/Calendar-Simple-v2.0.2.tar.gz
-Source0  : https://cpan.metacpan.org/authors/id/D/DA/DAVECROSS/Calendar-Simple-v2.0.2.tar.gz
+Version  : 2.0.3
+Release  : 28
+URL      : https://cpan.metacpan.org/authors/id/D/DA/DAVECROSS/Calendar-Simple-v2.0.3.tar.gz
+Source0  : https://cpan.metacpan.org/authors/id/D/DA/DAVECROSS/Calendar-Simple-v2.0.3.tar.gz
 Summary  : 'Perl extension to create simple calendars'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
@@ -52,10 +52,10 @@ perl components for the perl-Calendar-Simple package.
 
 
 %prep
-%setup -q -n Calendar-Simple-v2.0.2
-cd %{_builddir}/Calendar-Simple-v2.0.2
+%setup -q -n Calendar-Simple-v2.0.3
+cd %{_builddir}/Calendar-Simple-v2.0.3
 pushd ..
-cp -a Calendar-Simple-v2.0.2 buildavx2
+cp -a Calendar-Simple-v2.0.3 buildavx2
 popd
 
 %build
