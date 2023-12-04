@@ -5,7 +5,7 @@
 #
 Name     : perl-Calendar-Simple
 Version  : 2.0.3
-Release  : 29
+Release  : 30
 URL      : https://cpan.metacpan.org/authors/id/D/DA/DAVECROSS/Calendar-Simple-v2.0.3.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DA/DAVECROSS/Calendar-Simple-v2.0.3.tar.gz
 Summary  : 'Perl extension to create simple calendars'
